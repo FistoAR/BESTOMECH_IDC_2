@@ -10,6 +10,7 @@
         * {
             padding: 0;
             margin: 0;
+            background: rgba(22, 21, 21, 0.8);
             box-sizing: border-box;
 
         }
@@ -93,7 +94,7 @@
 <body>
   <div id="preloader" class="fixed inset-0 bg-white flex items-center justify-center z-999999999999"
     style="opacity: 1;">
-    <img src="./logo.svg" alt="Logo" class="w-52 h-52 animate-logo ">
+    <img src="./logo.svg" alt="Logo" class="w-52 h-52 animate-logo" style="background-color: white;">
   </div>
     <div id="content"></div>
 </body>
@@ -149,6 +150,7 @@
       // You could add origin checks here for security
       if (event.data && event.data.action === "toggleFullscreen") {
         if (!document.fullscreenElement) {
+          
           if (embedded.requestFullscreen) {
             embedded.requestFullscreen();
           } else if (embedded.webkitRequestFullscreen) {
@@ -163,10 +165,81 @@
         }
       }
     });
+  // document.addEventListener("fullscreenchange", () => {
+  //           if (document.fullscreenElement) {
+  //               console.log("Browser is now in fullscreen mode.");
+  //           } else {
+  //               console.log("Browser exited fullscreen mode.");
+  //           }
+  //       });
 
+// const embedded = document.getElementById("content");
+
+// window.addEventListener("message", function (event) {
+//   console.log("📨 Iframe message:", event.data);
+  
+//   if (event.data.action === "enterFullscreen") {
+//     if (!document.fullscreenElement) {
+//       embedded.requestFullscreen().catch(err => console.error(err));
+      
+//       // Send confirmation back
+//       setTimeout(() => {
+//         const obj = embedded.querySelector("object");
+//         if (obj && obj.contentWindow) {
+//           obj.contentWindow.postMessage({ fullscreenActive: true }, "*");
+//         }
+//       }, 200);
+//     }
+//   } 
+//   else if (event.data.action === "exitFullscreen") {
+//     if (document.fullscreenElement) {
+//       document.exitFullscreen().catch(err => console.error(err));
+      
+//       // Send confirmation back
+//       setTimeout(() => {
+//         const obj = embedded.querySelector("object");
+//         if (obj && obj.contentWindow) {
+//           obj.contentWindow.postMessage({ fullscreenActive: false }, "*");
+//         }
+//       }, 200);
+//     }
+//   }
+// });
+
+// // Listen for ESC key in parent too
+// document.addEventListener("keydown", function(event) {
+//   if (event.key === "Escape" && document.fullscreenElement) {
+//     console.log("🔑 Parent detected ESC - exiting fullscreen");
+    
+//     setTimeout(() => {
+//       const obj = embedded.querySelector("object");
+//       if (obj && obj.contentWindow) {
+//         obj.contentWindow.postMessage({ fullscreenActive: false }, "*");
+//       }
+//     }, 100);
+//   }
+// });
    
 </script>
 
+
+
+<script>
+
+//       document.addEventListener("keydown", function (e) {
+//     // Disable F11
+//     if (e.key === "F11") {
+//         // e.preventDefault();
+//         console.log("F11 blocked");
+//     }
+ 
+//     // Disable Escape
+//     if (e.key === "Escape") {
+//         // e.preventDefault();
+//         console.log("Escape blocked");
+//     }
+// });
+  </script>
 
 
 

@@ -2057,7 +2057,7 @@
 }
 /* Custom Scrollbar */
 .custom-scroll::-webkit-scrollbar {
-  width: 8px; 
+  width: 12px; 
                /* Scrollbar width */
 }
 
@@ -2158,4 +2158,25 @@
 .flipbook-scroll-wrapper.zoomed::-webkit-scrollbar-thumb {
     background: #0E3E77;
     border-radius: 10px;
+}
+/* Add this to your style.css */
+
+/* Allow scrolling when zoomed */
+.flipbook-scroll-wrapper.zoomed {
+    overflow-y: auto !important;
+    pointer-events: auto !important;
+}
+
+.flipbook-scroll-wrapper {
+    overflow-y: hidden;
+    transition: overflow-y 0.2s ease;
+}
+
+#flipbook {
+    pointer-events: auto;
+    transition: transform 0.2s ease, pointer-events 0.2s ease;
+}
+
+.no-scrollbar {
+    overflow-y: hidden !important;
 }

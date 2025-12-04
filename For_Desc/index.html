@@ -167,7 +167,7 @@ input[type="number"]:focus {
         .midsec img {
             width: 90%;
             object-fit: contain;
-            animation: fadeIn 0.5s ease-in-out;
+            /* animation: fadeIn 0.5s ease-in-out; */
         }
 
         @keyframes fadeIn {
@@ -250,7 +250,7 @@ input[type="number"]:focus {
 <div class="catalog-app " style="background-image: url('../global assets/icons/background-img.webp'); background-size: 100%;" >
 
 
-<div  class="absolute bottom-0 left-0 w-[100%] h-[5%] bg-black cursor-pointer" style="background: rgba(0, 0, 0, 0.8);" >
+<div  class="absolute bottom-0  left-0 w-[100%] h-[5%] bg-black cursor-pointer" style="background: rgba(0, 0, 0, 0.8);" >
   <div class="absolute top-[50%] left-[2%] cursor-pointer hover:bg-gray-500 z-[910]" style="transform: translateY(-50%);">
   <img src="../global assets/icons/tabel-of-content-icon.svg"  title="Table of Content" alt="table-of-content-icon" id="navToggle" class="  w-[2vw] h-[2vw] cursor-pointer "/> 
 
@@ -1752,31 +1752,7 @@ $(window).load(function () {
 });
 
 // ICONS - Define the button element first
-const fsBtn = document.getElementById("full-screen-btn");
-let isFullscreen = false;
-
-// Click handler to request parent to toggle fullscreen
-$('.full-screen').on('click', function () {
-    window.parent.postMessage({ action: "toggleFullscreen" }, "*");
-});
-
-// Listen for fullscreen status from parent window
-window.addEventListener("message", (event) => {
-    if (event.data.fullscreen === true) {
-        // Now in FULL SCREEN
-        fsBtn.src = "../global assets/icons/normal-screen-icon.svg";
-        fsBtn.title = "Exit Full Screen";
-        isFullscreen = true;
-    }
-    
-    if (event.data.fullscreen === false) {
-        // Now in NORMAL VIEW (including ESC key press)
-        fsBtn.src = "../global assets/icons/full-screen-icon.svg";
-        fsBtn.title = "Full Screen";
-        isFullscreen = false;
-    }
-});
-
+// ========== FULLSCREEN TOGGLE (WITH ESC KEY SUPPORT) ==========
 
 
     // $('#flipbook').bind('turned', function (event, page, view) {
@@ -3893,8 +3869,136 @@ document.getElementById('diverterShaftDiaInput').addEventListener('paste', funct
 </script>
 
 
+<!-- <script>
+  // This is inside your flipbook page
 
 
+// Ask the parent to go fullscreen on click
+
+
+
+// ICONS - Define the button element first
+const fsBtn = document.getElementById("full-screen-btn");
+// We don't need a separate `isFullscreen` variable, we can determine state from the icon's `src`.
+
+// 1. ON CLICK: Optimistically update the icon and tell the parent
+$('.full-screen').on('click', function () {
+    // Check if the icon is currently the "normal screen" icon
+    const isCurrentlyFullscreen = fsBtn.src.includes('normal-screen-icon');
+
+    // Optimistically toggle the icon source and title
+    if (isCurrentlyFullscreen) {
+        // If it was fullscreen, we are exiting. Show the "enter fullscreen" icon.
+        fsBtn.src = "../global assets/icons/full-screen-icon.svg";
+        fsBtn.title = "Full Screen";
+    } else {
+        // If it was normal, we are entering. Show the "exit fullscreen" icon.
+        fsBtn.src = "../global assets/icons/normal-screen-icon.svg";
+        fsBtn.title = "Exit Full Screen";
+    }
+
+    // Now, send the message to the parent page to perform the actual action
+    console.log("IFRAME: Sent toggleFullscreen request to parent.");
+    window.parent.postMessage({ action: "toggleFullscreen" }, "*");
+});
+
+// 2. LISTEN: Get confirmation from the parent to stay in sync
+// This is the "source of truth" and will fix the icon if the user presses ESC.
+window.addEventListener("message", (event) => {
+  console.log("trigger")
+    // Make sure the message is what we expect
+    if (typeof event.data.fullscreen !== 'undefined') {
+
+        if (event.data.fullscreen === true) {
+            // Parent CONFIRMS we are IN fullscreen. Set the correct icon.
+            fsBtn.src = "../global assets/icons/normal-screen-icon.svg";
+            fsBtn.title = "Exit Full Screen";
+            console.log("IFRAME: Parent confirmed fullscreen. Icon synced.");
+
+        } else {
+            // Parent CONFIRMS we are NOT in fullscreen. Set the correct icon.
+            fsBtn.src = "../global assets/icons/full-screen-icon.svg";
+            fsBtn.title = "Full Screen";
+            console.log("IFRAME: Parent confirmed normal screen. Icon synced.");
+        }
+    }
+});
+  </script> -->
+
+<script>
+  
+let finalState = false;
+// ICON button
+const fsBtn = document.getElementById("full-screen-btn");
+
+// CLICK → Send toggle request to parent
+$('.full-screen').on('click', function () {
+
+    // Immediately change icon (optimistic)
+    const isCurrentlyFullscreen = fsBtn.src.includes('normal-screen-icon');
+
+    if (isCurrentlyFullscreen) {
+        fsBtn.src = "../global assets/icons/full-screen-icon.svg";
+        fsBtn.title = "Full Screen";
+        finalState = true;
+    } else {
+        fsBtn.src = "../global assets/icons/normal-screen-icon.svg";
+        fsBtn.title = "Exit Full Screen";
+        finalState = false;
+    }
+
+    console.log("IFRAME: Sent toggle request");
+    window.parent.postMessage({ action: "toggleFullscreen" }, "*");
+});
+
+// RECEIVE confirmed fullscreen state from parent
+window.addEventListener("message", (event) => {
+
+    if (typeof event.data.fullscreen !== "undefined") {
+        const state = event.data.fullscreen;
+
+        if (state) {
+            fsBtn.src = "../global assets/icons/normal-screen-icon.svg";
+            fsBtn.title = "Exit Full Screen";
+            console.log("IFRAME: Fullscreen confirmed");
+        } else {
+            fsBtn.src = "../global assets/icons/full-screen-icon.svg";
+            fsBtn.title = "Full Screen";
+            console.log("IFRAME: Normal screen confirmed");
+        }
+    }
+});
+
+// document.addEventListener("keydown", function (e) {
+//     // Disable F11
+//     if (e.key === "F11") {
+//         e.preventDefault();
+//         console.log("F11 blocked");
+//     }
+ 
+//     // Disable Escape
+//     if (e.key === "Escape") {
+//         e.preventDefault();
+//         console.log("Escape blocked");
+//     }
+// });
+
+
+
+   window.addEventListener("resize", () => {
+    console.log("changed");
+ 
+    if (finalState) {
+
+      fsBtn.src = "../global assets/icons/full-screen-icon.svg";
+        fsBtn.title = "Full Screen";
+        console.log("Resize: Normal → Fullscreen Icon");
+   
+    }
+ 
+});
+
+</script>
 
 
 
