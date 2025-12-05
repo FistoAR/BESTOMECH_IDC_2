@@ -504,10 +504,31 @@ const closeSearchModal = document.getElementById('closeSearchModal');
 const pages = [
     { page: 1, title: "Cover Page", keywords: ["cover", "front", "home", "title", "1"] },
     { page: 2, title: "Introduction", keywords: ["intro", "introduction", "about", "2"] },
-    { page: 4, title: "Chapter 1", keywords: ["chapter 1", "getting started", 3] },
+    { page: 4, title: "Chapter 1", keywords: ["chapter 1", "getting started"] },
     { page: 6, title: "Chapter 2", keywords: ["chapter 2", "features"] },
     { page: 8, title: "Chapter 3", keywords: ["chapter 3", "examples"] },
     { page: 10, title: "Conclusion", keywords: ["conclusion", "end", "summary"] },
+    { page: 12, title: "Cover Page", keywords: ["cover", "front", "home", "title", "1"] },
+    { page: 14, title: "Introduction", keywords: ["intro", "introduction", "about", "2"] },
+    { page: 16, title: "Chapter 1", keywords: ["chapter 1", "getting started", 3] },
+    { page: 18, title: "Chapter 2", keywords: ["chapter 2", "features"] },
+    { page: 20, title: "Chapter 3", keywords: ["chapter 3", "examples"] },
+    { page: 22, title: "Conclusion", keywords: ["conclusion", "end", "summary"] },
+    { page: 24, title: "Cover Page", keywords: ["cover", "front", "home", "title", "1"] },
+    { page: 26, title: "Introduction", keywords: ["intro", "introduction", "about", "2"] },
+    { page: 28, title: "Chapter 1", keywords: ["chapter 1", "getting started", 3] },
+    { page: 30, title: "Chapter 2", keywords: ["chapter 2", "features"] },
+    { page: 32, title: "Chapter 3", keywords: ["chapter 3", "examples"] },
+    { page: 34, title: "Conclusion", keywords: ["conclusion", "end", "summary"] },
+    { page: 36, title: "Cover Page", keywords: ["cover", "front", "home", "title", "1"] },
+    { page: 38, title: "Introduction", keywords: ["intro", "introduction", "about", "2"] },
+    { page: 40, title: "Chapter 1", keywords: ["chapter 1", "getting started", 3] },
+    { page: 42, title: "Chapter 2", keywords: ["chapter 2", "features"] },
+    { page: 44, title: "Chapter 3", keywords: ["chapter 3", "examples"] },
+    { page: 46, title: "Conclusion", keywords: ["conclusion", "end", "summary"] },
+    { page: 48, title: "Cover Page", keywords: ["cover", "front", "home", "title", "1"] },
+    { page: 50, title: "Introduction", keywords: ["intro", "introduction", "about", "2"] },
+    
 ];
 
 // ✅ CLOSE SEARCH FUNCTION

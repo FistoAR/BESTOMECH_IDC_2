@@ -567,8 +567,10 @@
 .page .bottomsec img{
     position: absolute;
     bottom: 0;
+  
 
 }
+
 /******************************************************************************** page 1  ****************************************************/
 
 .timing-pulley-top{
@@ -2117,6 +2119,7 @@
     border-radius: 3px;
     outline: none;
     cursor: pointer;
+    display: none;
 }
 
 /* Zoom feedback animation */
