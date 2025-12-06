@@ -13,33 +13,29 @@
    <link rel="icon" href="../logo.svg">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-
-  <title>OODA BOND PRODUCT</title>
+  <!-- Tailwind Css  -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Bestomech</title>
 </head>
 
 <body>
 
 
   <!--******************************** 3D Models ***************************************************-->
-  <!--******************* model*************************-->
+  <!--******************* model start*************************-->
 
-  <!-- 109 ultra clear -->
 
-  <div class="lightbox-target" id="109_uc">
-    <div class="position-relative">
+<!-- ==============================Taper push pulley start======================= -->
 
-      <model-viewer src="./assets/models/109_uc_r&h.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
-        tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" camera-orbit="-365.5deg 84.48deg 8.422m"
-        field-of-view="30deg" disable-pan disable-tap>
+   <div class="lightbox-target" id="taper-bush-pulley">
+    <div class="position-relative bg-[#c9c9c9] background_color1">
+
+      <model-viewer src="./assets/models/50ml_hinged_container.glb"  ar-modes="webxr scene-viewer quick-look" field-of-view="45deg" camera-controls
+        tone-mapping="neutral" poster="poster.webp" disable-zoom shadow-intensity="1"  min-camera-orbit="auto auto 0.1094m" min-field-of-view="22.98deg"  disable-pan disable-tap  style=" scale: 0.55; "></model-viewer>>
         <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
         </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="ar_hand_prompt.png">
-        </div>
+      
       </model-viewer>
     </div>
 
@@ -47,25 +43,44 @@
     <div class="deg">
       <img src="./assets/images/360-degrees.webp" alt="">
     </div>
+
+     <!-- ✅ Full Color Picker -->
+<div class=" border border-red-500 ">
+
+ 
+  <div class="  color_picker">
+    <!-- Hidden color input -->
+    
+
+    <!-- Image triggers the hidden input -->
+    <img src="../lightBox/assets/images/colorwheel.png"
+         alt="Color Picker"
+         class="w-12 h-12 cursor-pointer color_picker1"
+        
+         onclick="document.getElementById('bgColorPicker1').click();">
+         <input type="color" 
+           id="bgColorPicker1" 
+           value="#9bdfd5" 
+           class="w-0 h-0 absolute left-[8%] bottom-[8%]">
+  </div>
+  <p class="absolute left-[2%] bottom-[3%]  font-bold">Background Color</p>
+</div>
+
   </div>
 
-  <!-- 109 uv ultra clear -->
+  <!-- ==============================Taper push pulley end======================= -->
 
-  <div class="lightbox-target" id="109_uv_uc">
-    <div class="position-relative">
+<!-- ==============================Timing pulley start======================= -->
 
-      <model-viewer src="assets/models/109_uv_uc.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
-        tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" camera-orbit="-718.4deg 83.3deg 8.422m"
-        field-of-view="30deg" disable-pan disable-tap>
+   <div class="lightbox-target" id="timing-pulley">
+    <div class="position-relative bg-[#c9c9c9] background_color2">
+
+      <model-viewer src="./assets/models/50ml_hinged_container.glb"  ar-modes="webxr scene-viewer quick-look" field-of-view="45deg" camera-controls
+        tone-mapping="neutral" poster="poster.webp" disable-zoom shadow-intensity="1"  min-camera-orbit="auto auto 0.1094m" min-field-of-view="22.98deg"  disable-pan disable-tap  style=" scale: 0.55; "></model-viewer>>
         <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
         </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="ar_hand_prompt.png">
-        </div>
+      
       </model-viewer>
     </div>
 
@@ -73,268 +88,102 @@
     <div class="deg">
       <img src="./assets/images/360-degrees.webp" alt="">
     </div>
+
+     <!-- ✅ Full Color Picker -->
+<div class=" border border-red-500 ">
+
+ 
+  <div class="  color_picker">
+    <!-- Hidden color input -->
+    
+
+    <!-- Image triggers the hidden input -->
+    <img src="../lightBox/assets/images/colorwheel.png"
+         alt="Color Picker"
+         class="w-12 h-12 cursor-pointer color_picker1"
+        
+         onclick="document.getElementById('bgColorPicker2').click();">
+         <input type="color" 
+           id="bgColorPicker2" 
+           value="#9bdfd5" 
+           class="w-0 h-0 absolute left-[8%] bottom-[8%]">
+  </div>
+  <p class="absolute left-[2%] bottom-[3%]  font-bold">Background Color</p>
+</div>
+
   </div>
 
-  <!-- TG 109 -->
+  <!-- ==============================Timing pulley end======================= -->
 
-  <div class="lightbox-target" id="tg_109">
-    <div class="position-relative">
+  <!-- ============================== start======================= -->
 
-      <model-viewer src="assets/models/tg_109.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
-        tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" camera-orbit="-722deg 84.49deg 17.63m"
-        field-of-view="30deg" disable-pan disable-tap>
-        <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="ar_hand_prompt.png">
-        </div>
-      </model-viewer>
-    </div>
+ 
 
-    <a class="lightbox-close" href="#" onclick="javascript:window.close()"></a>
-    <div class="deg">
-      <img src="./assets/images/360-degrees.webp" alt="">
-    </div>
-  </div>
-
-  <!-- 1k single part  -->
-
-  <div class="lightbox-target" id="1k_single_part_epoxy">
-    <div class="position-relative">
-
-      <model-viewer src="./assets/models/1k_single_part_epoxy.glb" ar ar-modes="webxr scene-viewer quick-look"
-        camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"
-        camera-orbit="-3.161deg 76.98deg 17.63m" field-of-view="30deg" disable-pan disable-tap>
-        <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
-      </model-viewer>
-    </div>
-
-    <a class="lightbox-close" href="#" onclick="javascript:window.close()"></a>
-    <div class="deg">
-      <img src="./assets/images/360-degrees.webp" alt="">
-    </div>
-  </div>
-
-  <!-- pre applied coating  -->
-
-  <div class="lightbox-target" id="pre_applied_coating">
-    <div class="position-relative">
-
-      <model-viewer src="./assets/models/pre_applied_coating.glb" ar ar-modes="webxr scene-viewer quick-look"
-        camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"
-        camera-orbit="-731.1deg 82.79deg 35.8m" field-of-view="30deg" disable-pan disable-tap>
-        <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
-      </model-viewer>
-    </div>
-
-    <a class="lightbox-close" href="#" onclick="javascript:window.close()"></a>
-    <div class="deg">
-      <img src="./assets/images/360-degrees.webp" alt="">
-    </div>
-  </div>
-
-  <!-- 52 aluminium putty  -->
-
-  <div class="lightbox-target" id="aluminium_putty">
-    <div class="position-relative">
-
-      <model-viewer src="./assets/models/aluminium_putty.glb" ar ar-modes="webxr scene-viewer quick-look"
-        camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"
-        camera-orbit="-730.3deg 80.81deg 35.8m" field-of-view="30deg" disable-pan disable-tap>
-        <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
-      </model-viewer>
-    </div>
-
-    <a class="lightbox-close" href="#" onclick="javascript:window.close()"></a>
-    <div class="deg">
-      <img src="./assets/images/360-degrees.webp" alt="">
-    </div>
-  </div>
-
-  <!-- 11116 metal expoxy  -->
-
-  <div class="lightbox-target" id="11116_metal_expoxy">
-    <div class="position-relative">
-
-      <model-viewer src="./assets/models/11116_metal_expoxy.glb" ar ar-modes="webxr scene-viewer quick-look"
-        camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"
-        camera-orbit="-9.089deg 86.86deg 16.45m" field-of-view="30deg" disable-pan disable-tap>
-        <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
-      </model-viewer>
-    </div>
-
-    <a class="lightbox-close" href="#" onclick="javascript:window.close()"></a>
-    <div class="deg">
-      <img src="./assets/images/360-degrees.webp" alt="">
-    </div>
-  </div>
-
-  <!-- nylon  -->
-
-  <div class="lightbox-target" id="nylon">
-    <div class="position-relative">
-
-      <model-viewer src="./assets/models/nylon.glb" ar ar-modes="webxr scene-viewer quick-look"
-        camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"
-        camera-orbit="-800.2deg 80.81deg 1.855m" field-of-view="30deg" disable-pan disable-tap>
-        <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
-      </model-viewer>
-    </div>
-
-    <a class="lightbox-close" href="#" onclick="javascript:window.close()"></a>
-    <div class="deg">
-      <img src="./assets/images/360-degrees.webp" alt="">
-    </div>
-  </div>
-
-  <!-- ms02 coating  -->
-
-  <div class="lightbox-target" id="ms02_coating">
-    <div class="position-relative">
-
-      <model-viewer src="./assets/models/ms02_coating.glb" ar ar-modes="webxr scene-viewer quick-look"
-        camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"
-        camera-orbit="-1089deg 79.23deg 35.8m" field-of-view="30deg" disable-pan disable-tap>
-        <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
-      </model-viewer>
-    </div>
-
-    <a class="lightbox-close" href="#" onclick="javascript:window.close()"></a>
-    <div class="deg">
-      <img src="./assets/images/360-degrees.webp" alt="">
-    </div>
-  </div>
-
-  <!-- high temperature  -->
-
-  <div class="lightbox-target" id="high_temperature">
-    <div class="position-relative">
-
-      <model-viewer src="./assets/models/high_temperature.glb" ar ar-modes="webxr scene-viewer quick-look"
-        camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"
-        camera-orbit="-1117deg 81.21deg 12.12m" field-of-view="30deg" disable-pan disable-tap style="max-height: 70%;">
-        <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
-      </model-viewer>
-    </div>
-
-    <a class="lightbox-close" href="#" onclick="javascript:window.close()"></a>
-    <div class="deg">
-      <img src="./assets/images/360-degrees.webp" alt="">
-    </div>
-  </div>
-
-  <!-- 6838 high strength  -->
-
-  <div class="lightbox-target" id="6838_high_strength">
-    <div class="position-relative">
-
-      <model-viewer src="./assets/models/6838_high_strength.glb" ar ar-modes="webxr scene-viewer quick-look"
-        camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1"
-        camera-orbit="-1085deg 82.4deg 7.332m" field-of-view="30deg" disable-pan disable-tap style="max-height: 75%;">
-        <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-        </div>
-      </model-viewer>
-    </div>
-
-    <a class="lightbox-close" href="#" onclick="javascript:window.close()"></a>
-    <div class="deg">
-      <img src="./assets/images/360-degrees.webp" alt="">
-    </div>
-  </div>
+  <!-- ============================== start======================= -->
 
 
-  <!-- <div class="lightbox-target2" id="model1">
-    <div class="position-relative">
+  <!--******************* model end*************************-->
 
-      <model-viewer disable-zoom disable-tap disable-pan id="preview" src="./assets/models/109 ultra clear hardner.glb"
-        ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="commerce" poster="poster.webp"
-        shadow-intensity="1" camera-orbit="-17.97deg 80.05deg 0.7957m" field-of-view="30deg">
-        <div class="progress-bar hide" slot="progress-bar">
-          <div class="update-bar"></div>
-        </div>
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-        <div id="ar-prompt">
-          <img src="./Image/ar_hand_prompt.png">
-        </div>
-      </model-viewer>
-    </div>
 
-    <a class="lightbox-close" href="#" onclick="javascript:window.close()"></a>
-    <div class="deg">
-      <img src="./assets/images/360-degrees.webp" alt="">
-    </div>
-  </div> -->
 
-  <!--******************* model ends *************************-->
+<!-- *************************Background color************************ -->
+
+<script>
+
+
+    function initBgColor1() {
+  const picker1 = document.getElementById("bgColorPicker1");
+  const bg1= document.querySelector(".background_color1");
+
+  if (!picker1 || !bg1) return;
+
+  const updateColor1 = (color) => {
+    bg1.style.backgroundColor = color;
+  };
+
+  picker1.addEventListener("input", (e) => updateColor1(e.target.value));
+
+
+  picker1.addEventListener("change", (e) => updateColor1(e.target.value));
+
+
+  picker1.addEventListener("click", () => picker1.focus());
+}
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(initBgColor1, 200); 
+});
+</script>
+
+<script>
+
+
+    function initBgColor2() {
+  const picker2 = document.getElementById("bgColorPicker2");
+  const bg2= document.querySelector(".background_color2");
+
+  if (!picker2 || !bg2) return;
+
+  const updateColor2 = (color) => {
+    bg2.style.backgroundColor = color;
+  };
+
+
+  picker2.addEventListener("input", (e) => updateColor2(e.target.value));
+
+
+  picker2.addEventListener("change", (e) => updateColor2(e.target.value));
+
+
+  picker2.addEventListener("click", () => picker2.focus());
+}
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(initBgColor2, 200); 
+});
+</script>
 
 
 
