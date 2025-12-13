@@ -31,6 +31,42 @@ html, body {
 
 
 
+.back-top-wrapper {
+  position: fixed;
+  bottom: 11%;
+  right: 5%;
+  width: 55px;
+  height: 55px;
+  padding: 2.5px; /* This becomes the border thickness */
+  background: linear-gradient(to right, #000000, #000000);
+  border-radius: 50%;
+  z-index: 111111000;
+  
+}
+
+.back-top-button {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.back-top-button i {
+  font-size: 24px;
+  background: linear-gradient(to right, #030303, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.back-top-button:hover i {
+  opacity: 0.8;
+}
+
 
 
 
@@ -113,16 +149,17 @@ html, body {
     min-width: 228px;
     max-width: 96vw;
     background: #fff; /* white background */
-    padding: 23px 22px 17px 22px;
-    border-radius: 18px;
+    /* padding: 23px 22px 17px 22px; */
+    /* border-radius: 18px; */
     box-shadow: 0 8px 35px rgba(0, 0, 0, 0.2);
-    border: 2px solid #000000; /* dark green border */
+    /* border: 2px solid #000000; dark green border */
     z-index: 1001;
     opacity: 0;
     transform: translateY(24px) scale(0.97);
     pointer-events: none;
     transition: opacity .32s cubic-bezier(.7, -0.26, .8, 1.42), transform .33s cubic-bezier(.7, -0.26, .8, 1.42);
     visibility: hidden;
+    padding-top: 2vw;
 }
 
 .toc-floating.show {
@@ -136,8 +173,11 @@ html, body {
     font-size: 1.2em;
     color: #000000; 
     font-weight: 600;
-    margin-bottom: 13px;
+    /* margin-bottom: 13px; */
     letter-spacing: 0.03em;
+    padding: 2vw;
+    text-align: center;
+    /* padding-top: 2vw; */
 }
 
 .toc-list {
@@ -147,7 +187,7 @@ html, body {
 }
 
 .toc-list li {
-    margin: 11px 0;
+    margin: 10px 0;
     cursor: pointer;
 }
 
@@ -156,11 +196,11 @@ html, body {
     color: #000; /* black text */
     font-weight: 500;
     display: block;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     transition: color 0.21s, background 0.22s, transform 0.17s;
-    background: #f9f9f9; /* light background */
-    padding: 10px 20px;
-    font-size: 1.03em;
+    /* background: #f9f9f9; light background */
+    padding: 5px 20px;
+    font-size: 0.9em;
 }
 
 .toc-list a:hover,
@@ -201,8 +241,8 @@ html, body {
     left: 1%;
     top: 11%;
     right: 0;
-    border-radius: 15px;
-    width: 85vw;
+    border-radius: 5px;
+    width: 65vw;
     margin: 0 1.5vw;
     border-left: none;
     border-right: none;
@@ -305,19 +345,6 @@ html, body {
     align-items: end;
 }
 
-#shareInput {
-    flex: 1 1 auto;
-    padding: 7px 10px;
-    font-size: 1em;
-    background: #f5f5f5; /* light grey background */
-    border: 1.5px solid #0f2f1d; /* dark green border */
-    border-radius: 7px;
-    color: #000; /* black text */
-    font-family: inherit;
-    overflow-x: auto;
-    pointer-events: auto;
-    user-select: all;
-}
 
 .copy-link-btn {
     background: #000000;  /* dark green */
@@ -376,11 +403,11 @@ html, body {
     min-width: 22px;
     max-width: 80vw;
     background: #fff;
-    padding: 23px 22px 17px 22px;
-    border-radius: 18px;
+    /* padding: 23px 22px 17px 22px; */
+    /* border-radius: 18px; */
     box-shadow: 0 8px 35px rgba(0, 0, 0, 0.2);
-    border: 2px solid #000000;
-    z-index: 1001;
+    /* border: 2px solid #000000; */
+    z-index: 11111001;
     opacity: 0;
     transform: translateY(24px) scale(0.97);
     pointer-events: none;
@@ -823,7 +850,7 @@ body {
 
 .page .bottomsec img{
     position: absolute;
-    bottom: 2%;
+    bottom:0%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -881,7 +908,7 @@ body {
             justify-content: center;
             align-items: center;
             padding: 20px;
-            z-index: 1111;
+            z-index: 11111111;
         }
 
         .popup-container {
@@ -1113,7 +1140,7 @@ body {
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
+            z-index: 1111000;
             animation: polyvFadeIn 0.3s ease;
         }
 
@@ -1155,12 +1182,12 @@ body {
             background: rgb(253, 0, 0);
             border: none;
             color: white;
-            font-size: 3vw;
+            font-size: 12vw;
             /* width: 40px;
             height: 40px; */
             font-weight: 200;
-            width: 1vw;
-            height: 2vw;
+            width: 8vw;
+            height: 8vw;
             padding: 1vw;
             border-radius: 50%;
             cursor: pointer;

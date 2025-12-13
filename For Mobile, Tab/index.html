@@ -49,49 +49,31 @@
 
 
   <button id="navToggle" class="nav-toggle-btn" aria-label="Toggle menu" aria-expanded="false">
-    <span class="hamburger-icon">
-      <span class="hamburger-bar bar1"></span>
-      <span class="hamburger-bar bar2"></span>
-      <span class="hamburger-bar bar3"></span>
-    </span>
+   <img src="../global assets/bottom-navbar/table-of-content-black-icon.svg" alt="table of content" class=""/>
   </button>
+
+
+
   <!-- Overlay -->
   <div id="navOverlay" class="nav-overlay"></div>
   <!-- Floating Table of Contents Nav -->
   <nav id="tocNav" class="toc-floating" aria-label="Table of Contents">
-    <div class="toc-title">Table of contents</div>
+    <div class="toc-title ">Table of contents</div>
      <ul class="toc-list">
           <!-- <li class="tb-link" data-page="1"><a> HOME</a></li>
           <li class="tb-link" data-page="2"><a> LIST OF SERVICES</a></li> -->
-          <li class="tb-link cursor-pointer" data-target="home" data-audio-path="../audios/home.mp3"><a> Home </a></li>
-            <li class="tb-link cursor-pointer" data-target="about-us" data-audio-path="../audios/about us.mp3"><a>About us</a></li>
-          <li class="tb-link cursor-pointer" data-target="products" data-audio-path="../audios/products.mp3"><a> Products  </a></li>
+          <li class="tb-link cursor-pointer"  data-target="home" data-audio-path="../audios/home.mp3"><a>➝ Home </a></li>
+            <li class="tb-link cursor-pointer" data-target="about-us" data-audio-path="../audios/about us.mp3"><a>➝ About us</a></li>
+          <li class="tb-link cursor-pointer" data-target="products" data-audio-path="../audios/products.mp3"><a>➝ Products  </a></li>
         
           
-          <li class="tb-link cursor-pointer" data-target="contact-us" data-audio-path="../audios/contact_us.mp3"><a> Contact Us  </a></li>
+          <li class="tb-link cursor-pointer" data-target="contact-us" data-audio-path="../audios/contact_us.mp3"><a>➝ Contact Us  </a></li>
           <!-- <li class="tb-link" data-page="28" data-audio-path="../audios/products.mp3"><a> PRODUCTS</a></li>
           <li class="tb-link" data-page="40" data-audio-path="../audios/contact_us.mp3"><a> CONTACT US</a></li> -->
         </ul>
   </nav>
   <audio id="navAudio"></audio>
-  <button id="shareBtn" class="share-btn" aria-label="Share this page">
-    <!-- Replace the previous SVG in your .share-btn with this: -->
-    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- White background with green border -->
-      <circle cx="15" cy="15" r="14" fill="#ffffff" stroke="#0f2f1d" stroke-width="2" />
 
-      <!-- Share icon in green -->
-      <g>
-        <circle cx="9" cy="15.5" r="2.5" fill="#0f2f1d" />
-        <circle cx="21" cy="8.5" r="2.5" fill="#0f2f1d" />
-        <circle cx="21" cy="21.5" r="2.5" fill="#0f2f1d" />
-        <path d="M11.2 14.2l7.6-4.2M11.2 16.8l7.6 4.2" stroke="#0f2f1d" stroke-width="1.6" stroke-linecap="round" />
-      </g>
-    </svg>
-
-
-
-  </button>
   <!-- <div class="share-menu" id="shareMenu" role="menu" aria-hidden="true">
         <div class="share-link-row">
           <input id="shareInput" type="text">
@@ -99,7 +81,7 @@
         </div>
         <span class="copied-msg" id="copiedMsg">Copied!</span>
       </div> -->
-  <div class="share-menu" id="shareMenu" role="menu" aria-hidden="true">
+  <!-- <div class="share-menu" id="shareMenu" role="menu" aria-hidden="true">
     <div class="share-link-row">
       <input id="shareInput" type="text" value="https://yourwebsite.com" readonly>
       <div class="flex gap-2">
@@ -112,13 +94,13 @@
       </div>
 
       <span class="copied-msg" id="copiedMsg">Copied!</span>
-      <!-- ✅ WhatsApp Share Button -->
+     
 
 
     </div>
 
 
-  </div>
+  </div> -->
 
 
 
@@ -127,40 +109,157 @@
 
 
 
-<div class="fixed top-[20%] right-[2%] z-5">
-  <!-- Hamburger Button (3 dots) -->
-  <button id="menuBtn" class="flex flex-col gap-1 w-8 h-8 items-center justify-center">
-    <span class="w-1 h-1 bg-gray-800 rounded-full"></span>
-    <span class="w-1 h-1 bg-gray-800 rounded-full"></span>
-    <span class="w-1 h-1 bg-gray-800 rounded-full"></span>
-  </button>
+<div class="fixed top-[2.8%] right-[3%] z-60 bg-white  rounded-lg " style="z-index: 111111;">
 
-  <!-- Menu Panel -->
-  <div id="menuPanel" class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-40">
+  <!-- Toggle Button -->
+
+
+  <!-- Overlay -->
+  <div
+    id="quickOverlay"
+    class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-[40]">
   </div>
+  <button id="quickToggleBtn" class="flex fixed top-[3%] right-[3%] bg-white rounded-lg flex-col gap-4 w-[13vw] h-[13vw] rounded-[1vw] items-center justify-center z-[999999]" style="z-index: 9999999 !important;">
+    
+    <!-- 3 Dots -->
+    <div class="quick-dots">
+      <span class="w-[2vw] h-[2vw] bg-gray-800 rounded-full block"></span>
+      <span class="w-[2vw] h-[2vw]  bg-gray-800 rounded-full block" style="margin: .5vw 0;"></span>
+      <span class="w-[2vw] h-[2vw] bg-gray-800 rounded-full block"></span>
+    </div>
 
-  <!-- Menu Content -->
-  <div id="menuContent" class="fixed top-12 right-[2%] bg-white rounded-2xl shadow-lg p-4 w-20 scale-0 origin-top-right transition-transform duration-300 z-50">
-    <button class="flex justify-center w-full mb-3">
-      <span class="text-xl">×</span>
+    <!-- X Icon -->
+    <span class="quick-x hidden text-[14vw] text-gray-800">×</span>
+  </button>
+  <!-- Menu -->
+  <div
+    id="quickMenu"
+    class="fixed top-[10%] right-[2%] p-4 scale-0 origin-top-right transition-transform duration-300 z-50">
+
+    <button class="quick-action flex flex-col items-center w-full py-3 hover:bg-gray-100 rounded-lg transition">
+      <img src="../global assets/icons/share-black.svg" class="w-[14vw] h-[14vw]" id="shareBtn" />
     </button>
-    <button class="flex flex-col items-center w-full py-3 hover:bg-gray-100 rounded-lg transition">
-      <span class="text-xl">📤</span>
+
+    <button class="quick-action flex flex-col items-center w-full py-3 hover:bg-gray-100 rounded-lg transition">
+      <img src="../global assets/icons/download-black.svg" class="w-[14vw] h-[14vw]" id="download-btn" />
     </button>
-    <button class="flex flex-col items-center w-full py-3 hover:bg-gray-100 rounded-lg transition">
-      <span class="text-xl">👤</span>
-    </button>
-    <button class="flex flex-col items-center w-full py-3 hover:bg-gray-100 rounded-lg transition">
-      <span class="text-xl">🎵</span>
-    </button>
+
+    <div class="bgm-container  cursor-pointer w-[14vw] h-[14vw]" >
+        <audio id="bgmAudio" loop>
+          <source src="../audios/Spring-Flowers(chosic.com).mp3" type="audio/wav">
+        </audio>
+        <button id="bgmButton" class="bgm-toggle cursor-pointer"> 
+          <img id="musicOnImg" src="../global assets/icons/music-on-black-icon.svg" title="music on" class="w-[14vw] h-[14vw]">
+    <img id="musicOffImg" src="../global assets/icons/music-off-black-icon.svg" title="music off" class="w-[14vw] h-[14vw] hidden"></button>
+      </div>
+
   </div>
 </div>
 
 
 
+<!-- ***********************************download start*********************************** -->
+
+
+<div id="downloadPopup"
+     class="hidden fixed top-[15%] right-[.8%] bg-white text-black px-[4vw] py-[4vw] rounded-lg shadow-lg z-[9999] w-[40vw] text-sm opacity-0 transition-opacity duration-300">
+    Download started...
+</div>
 
 
 
+<!-- ***********************************download end*********************************** -->
+
+
+
+         <!-- *************************share button navbar start**************************  -->
+
+
+
+    <!-- Overlay -->
+<div id="shareOverlay" 
+     class="hidden fixed inset-0 bg-gray-900/40 backdrop-gray-200 z-[1111111111] animate-fade-in">
+</div>
+
+
+    <!-- Modal -->
+    <div id="shareModal" class="hidden fixed  top-[6%] right-[8.5%] w-[90vw] max-w-[50vw] h-[30vw] bg-white rounded-xl shadow-2xl z-[1111111111] animate-modal-float " style="padding: 3vw;">
+        <!-- Header -->
+        <div class="flex justify-between items-center py-[1vw] px-[2vw] border-b border-gray-200">
+            <h2 class="text-[2vw] font-semibold text-black">Share</h2>
+            <button id="closeBtn" class="text-[2vw] text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">
+                ✕
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="px-[1vw] ">
+            <!-- Link Section -->
+            <div class="flex flex-col gap-[1vw] ">
+                <input
+                    id="shareInput"
+                    type="text"
+                    readonly
+                    class="flex-1 h-[2.5vw] px-[2vw] py-[.5vw] border border-gray-300 rounded-lg text-[2vw] font-mono bg-gray-50 focus:bg-white focus:border-blue-500 focus:outline-none transition-colors"
+                />
+                <div class="relative">
+                    <button
+                        id="copyBtn"
+                        class="px-[2vw] h-[3vw] py-[2.2vw] flex items-center gap-[.2vw] bg-[#4A3AFF] hover:bg-blue-600 text-white rounded-lg text-[2vw] font-semibold transition-colors active:scale-95 whitespace-nowrap cursor-pointer" style="padding: 1vw 1vw;"
+                    >
+                    <img src="../global assets/icons/copy-link-icon.svg " class="w-[3vw] "  />
+                        Copy Link
+                    </button>
+                    <span id="copiedMsg" class="hidden absolute top-[3.5vw] left-0 bg-gray-900 text-white px-[1vw] py-[0.8vw] rounded-md text-[2vw] whitespace-nowrap animate-fade-in-out">
+                        Copied!
+                    </span>
+                </div>
+            </div>
+
+            <!-- Share Through Section -->
+            <div class="border-t border-gray-200 pt-[2vw]">
+                <span class="inline-block text-[2vw] font-semibold text-black  tracking-wider mb-[1vw]">
+                    Share Through
+                </span>
+                <div class="grid grid-cols-8 gap-[.1vw]">
+                    <!-- WhatsApp -->
+                    <button id="whatsappBtn" class="w-[4vw] h-[4vw] flex items-center justify-center border border-gray-200 rounded-lg hover:-translate-y-0.5 transition-all hover:shadow-lg cursor-pointer" title="WhatsApp">
+                       
+                        <img src="../global assets/icons/whatsapp-icon.svg" alt="whatsapp-icon" class=""/>
+                    </button>
+
+                    <!-- Twitter -->
+                    <button id="twitterBtn" class="w-[4vw] h-[4vw] flex items-center justify-center border border-gray-200 rounded-lg hover:-translate-y-0.5 transition-all hover:shadow-lg cursor-pointer" title="Twitter">
+                        
+                         <img src="../global assets/icons/twitter-icon.svg" alt="twitter-icon" class=""/>
+                    </button>
+
+                    <!-- Facebook -->
+                    <button id="facebookBtn" class="w-[4vw] h-[4vw] flex items-center justify-center border border-gray-200 rounded-lg hover:-translate-y-0.5 transition-all hover:shadow-lg cursor-pointer" title="Facebook">
+                        
+                         <img src="../global assets/icons/facebook-icon.svg" alt="facebook-icon" class=""/>
+                    </button>
+
+                   
+
+                    
+
+                    <!-- Instagram -->
+                    <!-- <button id="instagramBtn" class="w-[4vw] h-[4vw] flex items-center justify-center border border-gray-200 rounded-lg hover:-translate-y-0.5 transition-all hover:shadow-lg cursor-pointer" title="Instagram">
+                        
+                         <img src="../global assets/icons/instagram-icon.svg" alt="instagram-icon" class=""/>
+                    </button> -->
+
+                     <button id="linkedInBtn" class="w-[4vw] h-[4vw] flex items-center justify-center border border-gray-200 rounded-lg hover:-translate-y-0.5 transition-all hover:shadow-lg cursor-pointer" title="Instagram">
+                        
+                         <img src="../global assets/icons/linked-in-icon.svg" alt="linked-in-icon" class=""/>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+         <!-- *************************share button navbar end**************************  -->
 
 <!-- -------**********************************data fetching popup start----- -->
         
@@ -203,7 +302,7 @@
                   <div class="message" id="tapperPushVMessage"></div>
               </div>
 
-              <div class="flex  justify-around">
+              <div class="flex flex-col justify-around">
                   <div class="section w-[65%]">
                       <div class="section-title">Fetched Results</div>
 
@@ -247,7 +346,7 @@
                       </div>
                   </div>
 
-                  <div class="w-[25%] rounded-lg overflow-hidden flex items-center justify-center">
+                  <div class="w-[30vw] rounded-lg overflow-hidden flex items-center justify-center" style="margin-right: auto; margin-left: auto;">
                       <img id="tapperPushVImage" src="" alt="" class="w-full h-full object-contain p-4">
                   </div>
               </div>
@@ -383,7 +482,7 @@
                 </div>
                 
 <!-- IMAGE DISPLAY SECTION (Replace your current div with this) -->
-<div class="w-[25%]   rounded-lg overflow-hidden flex items-center justify-center ">
+ <div class="w-[30vw]  mx-auto rounded-lg overflow-hidden flex items-center justify-around" style="margin-right: auto; margin-left: auto;">
   <img id="pulleyImage" src="" alt="" class="w-full h-full object-contain p-4">
 </div>
 </div>
@@ -485,7 +584,7 @@
                 </div>
 
 
- <div class="w-[25%]   rounded-lg overflow-hidden flex items-center justify-around">
+ <div class="w-[30vw]  mx-auto rounded-lg overflow-hidden flex items-center justify-around" style="margin-right: auto; margin-left: auto;">
   <img id="Poly_v_pulley_Image" src="" alt="" class="w-full h-full object-contain p-4">
 </div>
 </div>
@@ -596,7 +695,7 @@
                         </div>
                     </div>
 
-                    <div class="image-section w-[25%] rounded-lg overflow-hidden flex items-center justify-center">
+                    <div class="image-section w-[25%] rounded-lg overflow-hidden flex items-center justify-center" style="margin-right: auto; margin-left: auto;">
                         <img id="sprocketImage" src="" alt="" class="placeholder w-full h-full object-contain p-4">
                     </div>
                 </div>
@@ -713,7 +812,7 @@
                     </div>
                 </div>
 
-                <div class="w-[25%] rounded-lg overflow-hidden flex items-center justify-center">
+                <div class="w-[auto] rounded-lg overflow-hidden flex items-center justify-center" style="margin-right: auto; margin-left: auto;">
                     <img id="diverterImage" src="" alt="" class="w-full h-full object-contain p-4">
                 </div>
             </div>
@@ -734,15 +833,13 @@
 
 
 
-
-  <div class="back-top-wrapper">
+<div class="back-top-wrapper">
     <div class="back-top-button">
       <i class="fa-solid fa-arrow-up"></i>
     </div>
   </div>
 
- <!-- =====================================================page 5 want to replace================================================================= -->
-
+ <!-- =====================================================page 3 want to replace================================================================= -->
 
 
 
@@ -755,7 +852,7 @@
 
  <!-- =====================================================Home Page Start================================================================= -->
 
-          <div class="page relative">
+          <div class="page relative" id="home">
             <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
             <img src="../global assets/pages/home-page/top-bg.webp" class="w-[100%] h-[64%] absolute top-[0%] left-[0%]"/>
             <img src="../global assets/pages/home-page/bottom-bg.webp" class="w-[49%]  absolute bottom-[5%] left-[0%]"/>
@@ -781,7 +878,7 @@
  <!-- =====================================================About us Page Start================================================================= -->
 
 
-  <div class="page relative">
+  <div class="page relative" id="about-us">
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/left.webp" alt="" ></div>
           <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
          
@@ -807,24 +904,24 @@
  <!-- =====================================================About us Page Start================================================================= -->
 
  <!-- =====================================================Table of content Start================================================================= -->
-         <div class="page relative">
+         <div class="page relative" id="products">
          
             <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
 
             <img src="../global assets/pages/table-of-contents/Table-of-contents-img.png" class="w-[100%] h-[100%] absolute top-[0%] left-[0%]"/>
 
-            <img src="../global assets/pages/table-of-contents/taper-bush-pulley.svg" data-page="4" alt="taper-bush-pulley" class="absolute top-[22%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/taper-push-pulley.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-            <img src="../global assets/pages/table-of-contents/timing-pulley.svg" data-page="10" alt="timing-pulley" class="absolute top-[32%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/timing-pulley.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-            <img src="../global assets/pages/table-of-contents/poly-v-pulley.svg" data-page="12" alt="poly-v-pulley" class="absolute top-[42%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/poly-v-pulley.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-            <img src="../global assets/pages/table-of-contents/sprocket.svg" data-page="14" alt="sprocket" class="absolute top-[52%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/sprocket.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-            <img src="../global assets/pages/table-of-contents/couplings.svg" data-page="18" alt="couplings" class="absolute top-[62%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/couplings.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-            <img src="../global assets/pages/table-of-contents/tyre-coupling.svg" data-page="19" alt="tyre-coupling" class="absolute top-[66%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/tyre-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-            <img src="../global assets/pages/table-of-contents/gear-coupling.svg" data-page="26" alt="gear-coupling" class="absolute top-[68%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/gear-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-            <img src="../global assets/pages/table-of-contents/pin-bush-coupling.svg" data-page="31" alt="pin-bush-coupling" class="absolute top-[70%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/pin-push-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-            <img src="../global assets/pages/table-of-contents/roller-chain-coupling.svg" data-page="35" alt="roller-chain-coupling" class="absolute top-[72%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/roller-chain-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-            <img src="../global assets/pages/table-of-contents/curved-jaw-coupling.svg" data-page="41" alt="curved-jaw-coupling" class="absolute top-[74%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/curved-jaw-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-            <img src="../global assets/pages/table-of-contents/straight-jaw-coupling.svg" data-page="46" alt="straight-jaw-coupling" class="absolute top-[76%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/straight-jaw-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
-            <img src="../global assets/pages/table-of-contents/diverter-wheels.svg" data-page="50" alt="diverter-wheel" class="absolute top-[82%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/diverter-wheels.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/taper-bush-pulley.svg" data-page="4" data-target="taper-push-pulley" alt="taper-bush-pulley" class="absolute top-[22%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/taper-push-pulley.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/timing-pulley.svg" data-page="10" data-target="timing-pulley" alt="timing-pulley" class="absolute top-[32%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/timing-pulley.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/poly-v-pulley.svg" data-page="12" data-target="poly-v-pulley" alt="poly-v-pulley" class="absolute top-[42%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/poly-v-pulley.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/sprocket.svg" data-page="14" data-target="sprocket" alt="sprocket" class="absolute top-[52%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/sprocket.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/couplings.svg" data-page="18" data-target="couplings" alt="couplings" class="absolute top-[62%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/couplings.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/tyre-coupling.svg" data-page="19" data-target="tyre-coupling" alt="tyre-coupling" class="absolute top-[66%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/tyre-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/gear-coupling.svg" data-page="26" data-target="gear-coupling" alt="gear-coupling" class="absolute top-[68%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/gear-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/pin-bush-coupling.svg" data-page="31" data-target="pin-bush-coupling" alt="pin-bush-coupling" class="absolute top-[70%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/pin-push-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/roller-chain-coupling.svg" data-page="35" data-target="roller-chain-coupling" alt="roller-chain-coupling" class="absolute top-[72%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/roller-chain-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/curved-jaw-coupling.svg" data-page="41" data-target="curved-jaw-coupling" alt="curved-jaw-coupling" class="absolute top-[74%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/curved-jaw-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/straight-jaw-coupling.svg" data-page="46" data-target="straight-jaw-coupling" alt="straight-jaw-coupling" class="absolute top-[76%] w-[55%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/straight-jaw-coupling.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
+            <img src="../global assets/pages/table-of-contents/diverter-wheels.svg" data-page="50" data-target="diverter-wheel" alt="diverter-wheel" class="absolute top-[82%] w-[60%] right-[5%] tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 line-reveal2" data-audio-path="../audios/diverter-wheels.mp3" style="transform: scale(1); transition: transform 0.5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"/>
             
           <div class="gradient"></div>
           
@@ -833,13 +930,13 @@
 <!-- =====================================================Table of content end================================================================= -->
  <!-- =====================================================page 2 Start================================================================= -->
 
-    <div class="page relative">
+    <div class="page relative" id="taper-push-pulley">
           <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
 
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/left.webp" alt=""></div>
           <div class="midsec">
             <img src="../global assets/pages/taper-bush-pulley/taper-bush-pulley-main-page.webp" class="absolute top-[7%] left-[50%]" style="transform: translateX(-50%); object-fit: unset; height: 88%; width: 100%;"/>
-            <div class="open-btn " style="right: 5%; position: absolute; top: 41%;" onclick="openTapperPushVPopup()">
+            <div class="open-btn " style="right: 5%; position: absolute; top: 40%;" onclick="openTapperPushVPopup()">
                 <button class="items-center" >TYPE DATA</button> 
                 <button class="arrow-btn">›</button>
 
@@ -859,12 +956,12 @@
         </div>
 <!-- =====================================================page 2 end================================================================= -->
   <!-- =====================================================page 3 Start================================================================= -->
-     <div class="page relative">
+        <div class="page relative">
             <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
 
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/right1.webp" alt=""></div>
           <div class="midsec">
-            <img src="../global assets/pages/taper-bush-pulley/tbp-advantages.webp" class="w-[90%] h-[90%] absolute top-[50%] left-[50%]" style="transform: translate(-50%, -50%);"/>
+            <img src="../global assets/pages/taper-bush-pulley/tbp-advantages.webp" class="w-[90%] h-[90%] absolute top-[50%] left-[50%]" style="transform: translate(-50%, -50%); height: 88% !important;"/>
           </div>
           <div class="gradient"></div>
          <img src="../global assets/Images_new/page_no/02.svg" class="absolute  bottom-[.5%] left-[50%] w-[5%] z-[2] " style="transform: translateX(-50%);"/>
@@ -879,12 +976,15 @@
     <div class="topsec">
         <img src="../global assets/Images/Top&Bottom/left.webp" alt="">
     </div>
-    <div class="px-[2vw] leading-[1.3vw] mt-[-.5vw]">
-      <h2 class="text-black font-[600] text-center text-[.8vw]">BESTOMECH TAPER BUSH PULLEYS</h2>
-      <p class="text-[#14447D] font-[500] text-[.7vw]">Pulleys for Z, SPZ Belts</p>
+    <div class="absolute top-[7%] left-[5%] ">
+          <div class="px-[2vw] leading-[3vw] mt-[-.5vw]">
+           <h2 class="text-black font-[600] text-center text-[2vw]">BESTOMECH TAPER BUSH PULLEYS</h2>
+            <p class="text-[#14447D] font-[500] text-[1.9vw]">Pulleys for Z, SPZ Belts</p>
+            </div>
     </div>
+    
 
-   <div class="absolute top-[8%] left-[50%] w-[100%] h-[100%]" style="transform: translateX(-50%);">
+   <div class="absolute top-[12%] left-[50%] w-[100%] h-[100%]" style="transform: translateX(-50%);">
         <div class="midsec  w-[98%] overflow-y-scroll custom-scroll relative" style="height: 83%; scrollbar-width: 1px; overflow-y: scroll !important; background-color: transparent !important; ">
         <div class="flex flex-col items-center gap-6 bg-[none]" style="background-color: transparent !important;">
             <img src="../global assets/pages/taper-bush-pulley/spz/table-1-z.webp"
@@ -913,11 +1013,14 @@
     <div class="topsec">
         <img src="../global assets/Images/Top&Bottom/right1.webp" alt="">
     </div>
-    <div class="px-[2vw] leading-[1.3vw] mt-[-.5vw]  absolute top-[5%] left-[0] ">
-      <h2 class="text-black font-[600] text-center text-[.8vw]">BESTOMECH TAPER BUSH PULLEYS</h2>
-      <p class="text-[#14447D] font-[500] text-[.7vw]">Pulleys for A, SPA Belts</p>
+     <div class="absolute top-[7%] left-[5%] ">
+      <div class="px-[2vw] leading-[3vw] mt-[-.5vw]  ">
+      <h2 class="text-black font-[600] text-center text-[2vw]">BESTOMECH TAPER BUSH PULLEYS</h2>
+      <p class="text-[#14447D] font-[500] text-[1.9vw]">Pulleys for A, SPA Belts</p>
     </div>
-  <div class="absolute top-[8%] left-[50%] w-[100%] h-[100%]" style="transform: translateX(-50%);">
+    </div>
+    
+  <div class="absolute top-[12%] left-[50%] w-[100%] h-[100%]" style="transform: translateX(-50%);">
 
     <div class="midsec  w-[98%] overflow-y-scroll custom-scroll relative" style="height: 83%; scrollbar-width: 1px; overflow-y: scroll !important; background-color: transparent !important;">
         <div class="flex flex-col items-center gap-6 bg-[none]" style="background-color: transparent !important;">
@@ -960,12 +1063,14 @@
     <div class="topsec">
         <img src="../global assets/Images/Top&Bottom/left.webp" alt="">
     </div>
-    <div class="px-[2vw] leading-[1.3vw] mt-[-.5vw]">
-      <h2 class="text-black font-[600] text-center text-[.8vw]">BESTOMECH TAPER BUSH PULLEYS</h2>
-      <p class="text-[#14447D] font-[500] text-[.7vw]">Pulleys for B, SPB Belts</p>
+     <div class="absolute top-[7%] left-[5%] ">
+      <div class="px-[2vw] leading-[3vw] mt-[-.5vw]  ">
+      <h2 class="text-black font-[600] text-center text-[2vw]">BESTOMECH TAPER BUSH PULLEYS</h2>
+      <p class="text-[#14447D] font-[500] text-[1.9vw]">Pulleys for B, SPB Belts</p>
+    </div>
     </div>
 
-  <div class="absolute top-[8%] left-[50%] w-[100%] h-[100%]" style="transform: translateX(-50%);">
+  <div class="absolute top-[12%] left-[50%] w-[100%] h-[100%]" style="transform: translateX(-50%);">
       <div class="midsec  w-[98%] overflow-y-scroll custom-scroll relative" style=" height: 83%; scrollbar-width: 1px; overflow-y: scroll !important; background-color: transparent !important;">
         <div class="flex flex-col items-center gap-6 bg-[none]" style="background-color: transparent !important;">
             
@@ -1009,12 +1114,14 @@
     <div class="topsec">
         <img src="../global assets/Images/Top&Bottom/right1.webp" alt="">
     </div>
-    <div class="px-[2vw] leading-[1.3vw] mt-[-.5vw]">
-      <h2 class="text-black font-[600] text-center text-[.8vw]">BESTOMECH TAPER BUSH PULLEYS</h2>
-      <p class="text-[#14447D] font-[500] text-[.7vw]">Pulleys for C, SPC Belts</p>
+    <div class="absolute top-[7%] left-[5%] ">
+      <div class="px-[2vw] leading-[3vw] mt-[-.5vw]  ">
+      <h2 class="text-black font-[600] text-center text-[2vw]">BESTOMECH TAPER BUSH PULLEYS</h2>
+      <p class="text-[#14447D] font-[500] text-[1.9vw]">Pulleys for C, SPC Belts</p>
+    </div>
     </div>
 
-     <div class="absolute top-[8%] left-[50%] w-[100%] h-[100%]" style="transform: translateX(-50%);">
+     <div class="absolute top-[12%] left-[50%] w-[100%] h-[100%]" style="transform: translateX(-50%);">
         <div class="midsec  w-[98%] overflow-y-scroll custom-scroll relative" style="height: 83%; scrollbar-width: 1px; overflow-y: scroll !important; background-color: transparent !important;">
         <div class="flex flex-col items-center gap-6 bg-[none]" style="background-color: transparent !important;">
             
@@ -1049,7 +1156,7 @@
 
 <!-- =====================================================page 7 end================================================================= -->
  <!-- =====================================================page 8 Start================================================================= -->
-<div class="page relative">
+<div class="page relative" id="timing-pulley">
    <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/left.webp" alt=""></div>
           <div class="midsec">
@@ -1125,7 +1232,7 @@
 </div>
 <!-- =====================================================page 9 end================================================================= -->
   <!-- =====================================================page 10 Start================================================================= -->
-       <div class="page relative">
+       <div class="page relative" id="poly-v-pulley">
          <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/right1.webp" alt=""></div>
           <div class="midsec">
@@ -1149,30 +1256,31 @@
         </div>
 <!-- =====================================================page 10 end================================================================= -->
   <!-- =====================================================page 11 Start================================================================= -->
+
 <div class="page relative flex flex-col"> <!-- ensure page has height -->
    <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
   <div class="topsec">
     <img src="../global assets/Images/Top&Bottom/left.webp" alt="Top Banner">
   </div>
-<div class="absolute top-[3%] left-[0]">
+<div class="absolute top-[5%] left-[0] w-[100%]">
 <div class="poly-v-pulley-controls text-center ">
     <button id="poly-v-pulley-prevBtn"
-            class="bg-[#0F3D73] rounded-[.4vw] cursor-pointer text-white p-[.4vw] text-center text-[.5vw] disabled:opacity-50"
+            class="bg-[#0F3D73] rounded-[.4vw] cursor-pointer text-white p-[1vw] text-center text-[2vw] disabled:opacity-50" style="padding: 1vw;"
             onclick="polyVPulleyPreviousImage()">← Previous</button>
 
-    <span class="image-counter mx-4 text-center " ><span id="poly-v-pulley-currentImage">1</span> /
+    <span class="image-counter mx-4 text-center text-[2vw] " ><span id="poly-v-pulley-currentImage">1</span> /
       <span id="poly-v-pulley-totalImages">3</span></span>
 
     <button id="poly-v-pulley-nextBtn"
-            class="bg-[#0F3D73] rounded-[.4vw] cursor-pointer text-white p-[.4vw] text-center text-[.5vw] disabled:opacity-50"
+            class="bg-[#0F3D73] rounded-[.4vw] cursor-pointer text-white p-[.4vw] text-center text-[2vw] disabled:opacity-50" style="padding: 1vw;"
             onclick="polyVPulleyNextImage()">Next →</button>
   </div>
 </div>
   
-  <div class="absolute top-[8%] left-[50%] w-[100%] h-[100%] z-111111" style="transform: translateX(-50%);">
+  <div class="absolute top-[11%] left-[50%] w-[100%] h-[auto] z-111" style="transform: translateX(-50%); overflow-y: hidden;">
  <!-- MID SECTION: give a fixed height so overflow-y works -->
   <div class="midsec w-[98%] mt-[.5vw]  custom-scroll relative mx-auto bg-transparent"
-       style="height:170vw; overflow-y:auto;">
+       style="height:100vw; overflow-y:auto;">
     <div id="poly-v-pulley-pageContent" class="flex flex-col items-center gap-6 mt-[1vw] bg-transparent" style="height:90vh; "></div>
   </div>
   </div>
@@ -1185,7 +1293,104 @@
 </div>
 <!-- =====================================================page 11 end================================================================= -->
 
+  <!-- =====================================================page 12 Start================================================================= -->
+    <div class="page relative" id="sprocket">
+        <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
 
+          <div class="topsec"><img src="../global assets/Images/Top&Bottom/right1.webp" alt=""></div>
+          <div class="midsec">
+            <img src="../global assets/pages/sprockets/sprockets-main-page.webp" class="absolute top-[7%] left-[50%]" style="transform: translateX(-50%); object-fit: unset; height: 88%; width: 100%;"/>
+            <div class="open-btn" style="right: 5%; position: absolute; top: 38.5%;" onclick="openSprocketPopup()">
+                <button >TYPE DATA</button>
+                <button class="arrow-btn">›</button>
+                </div>
+          </div>
+          <a target="_blank" href="../lightBox/index.html#sprockets">
+            <img src="../global assets/pages/sprockets/sprockets-product-img.webp" alt="product-img" class="absolute top-[12%] left-[0%] w-[40%]"/>
+            <img src="../global assets/pages/taper-bush-pulley/view-360-icon.svg" alt="360" class="absolute top-[8.5%] left-[5%] w-[14%] "/>
+
+          </a>
+       <img src="../global assets/Images_new/page_no/12.svg" class="absolute  bottom-[.5%] left-[50%] w-[5%] z-[2] " style="transform: translateX(-50%);"/>
+         
+          <div class="gradient"></div>
+          <div class="bottomsec"><img src="../global assets/Images/Top&Bottom/right2.webp" alt=""></div>
+        </div>
+<!-- =====================================================page 12 end================================================================= -->
+  <!-- =====================================================page 13 Start================================================================= -->
+         <div class="page relative" style="background-color: transparent !important;" >
+     <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
+
+    <div class="topsec">
+        <img src="../global assets/Images/Top&Bottom/left.webp" alt="">
+    </div>
+    <!-- <div class="px-[2vw] leading-[1.3vw] mt-[-.5vw]">
+      <h2 class="text-black font-[600] text-center text-[.8vw]">BESTOMECH TAPER BUSH PULLEYS</h2>
+      <p class="text-[#14447D] font-[500] text-[.7vw]">Pulleys for Z, SPZ Belts</p>
+    </div> -->
+ <div class="absolute top-[8%] left-[50%] w-[100%] h-[100%]" style="transform: translateX(-50%);">
+
+     <!-- MID SECTION - SCROLLABLE -->
+    <div class="midsec  w-[98%] h-[87%] overflow-y-scroll custom-scroll relative" style="scrollbar-width: 1px; overflow-y: scroll !important; background-color: transparent !important;  height: 88% !important;">
+        <div class="flex flex-col items-center gap-6 bg-[none]" style="background-color: transparent !important;">
+
+            <img src="../global assets/pages/sprockets/sprockets-1-1.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/sprockets/sprockets-1-2.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/sprockets/sprockets-2-1.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/sprockets/sprockets-2-2.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/sprockets/sprockets-3-1.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/sprockets/sprockets-3-2.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/sprockets/sprockets-4-1.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/sprockets/sprockets-4-2.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/sprockets/sprockets-5-1.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/sprockets/sprockets-5-2.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/sprockets/sprockets-5-3.webp"
+                 class="w-[90%]" />
+        </div>
+    </div>
+ </div>
+ 
+       <img src="../global assets/Images_new/page_no/13.svg" class="absolute  bottom-[.5%] left-[50%] w-[5%] z-[2] " style="transform: translateX(-50%);"/>
+
+    <div class="bottomsec">
+        <img src="../global assets/Images/Top&Bottom/sprockets-bottom.webp" alt="">
+    </div>
+</div>
+  <!-- =====================================================page 13 end================================================================= -->
+  <!-- =====================================================page 14 Start================================================================= -->
+ <div class="page relative">
+           <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
+
+          <div class="topsec"><img src="../global assets/Images/Top&Bottom/right1.webp" alt=""></div>
+          <div class="midsec">
+            <img src="../global assets/pages/sprockets/sprockets-diagram.webp" class="absolute top-[50%] left-[50%]" style="transform: translate(-50%, -50%); object-fit: unset; "/>
+          </div>
+       <img src="../global assets/Images_new/page_no/14.svg" class="absolute  bottom-[.5%] left-[50%] w-[5%] z-[2] " style="transform: translateX(-50%);"/>
+
+          <div class="gradient"></div>
+          <div class="bottomsec"><img src="../global assets/Images/Top&Bottom/right2.webp" alt=""></div>
+        </div>
+
+ <!-- =====================================================page 14 end================================================================= -->
 
 
 
@@ -1196,7 +1401,7 @@
 
 
 <!-- =====================================================page 15 Start================================================================= -->
-  <div class="page relative">
+  <div class="page relative" id="couplings">
          <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
 
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/left.webp" alt=""></div>
@@ -1204,13 +1409,13 @@
             <img src="../global assets/pages/couplings/coupling-main-page.webp" class="absolute top-[7%] left-[50%]" style="transform: translateX(-50%); object-fit: unset; height: 88%; width: 100%;"/>
            
           </div>
-          <div class="grid grid-cols-3 gap-3 absolute top-[52%] p-[1vw]">
-          <img src="../global assets/pages/couplings/tyre-coupling-img.webp" data-page="18" alt="tyre-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105"/>
-          <img src="../global assets/pages/couplings/gear-coupling-img.webp" data-page="25" alt="tyre-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105"/>
-          <img src="../global assets/pages/couplings/pin-bush-coupling-img.webp" data-page="31" alt="tyre-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105"/>
-          <img src="../global assets/pages/couplings/roller-chain-flexible-coupling-img.webp" data-page="35" alt="tyre-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105"/>
-          <img src="../global assets/pages/couplings/curved-jaw-coupling-img.webp" data-page="41" alt="tyre-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105"/>
-          <img src="../global assets/pages/couplings/straight-jaw-coupling-img.webp" data-page="45" alt="tyre-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105"/>
+          <div class="grid grid-cols-3 gap-3 absolute top-[54%] p-[1vw]">
+          <img src="../global assets/pages/couplings/tyre-coupling-img.webp" data-page="18" data-target="tyre-coupling"  alt="tyre-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105" data-audio-path="../audios/tyre-coupling.mp3"/>
+          <img src="../global assets/pages/couplings/gear-coupling-img.webp" data-page="25" data-target="gear-coupling" alt="gear-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105" data-audio-path="../audios/gear-coupling.mp3"/>
+          <img src="../global assets/pages/couplings/pin-bush-coupling-img.webp" data-page="31" data-target="pin-bush-coupling" alt="tyre-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105" data-audio-path="../audios/pin-push-coupling.mp3"/>
+          <img src="../global assets/pages/couplings/roller-chain-flexible-coupling-img.webp"  data-target="roller-chain-coupling" data-page="35" alt="tyre-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105" data-audio-path="../audios/roller-chain-coupling.mp3"/>
+          <img src="../global assets/pages/couplings/curved-jaw-coupling-img.webp" data-page="41" data-target="curved-jaw-coupling" alt="tyre-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105" data-audio-path="../audios/curved-jaw-coupling.mp3"/>
+          <img src="../global assets/pages/couplings/straight-jaw-coupling-img.webp" data-page="45" data-target="straight-jaw-coupling" alt="tyre-coupling" class="tb-link cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105" data-audio-path="../audios/straight-jaw-coupling.mp3"/>
 
           </div>
        <img src="../global assets/Images_new/page_no/15.svg" class="absolute  bottom-[.5%] left-[50%] w-[5%] z-[2] " style="transform: translateX(-50%);"/>
@@ -1220,7 +1425,7 @@
         </div>
   <!-- =====================================================page 15 end================================================================= -->
   <!-- =====================================================page 16 Start================================================================= -->
-  <div class="page relative">
+  <div class="page relative" id="tyre-coupling">
     <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/right1.webp" alt=""></div>
           <div class="midsec">
@@ -1312,7 +1517,7 @@
   <!-- =====================================================page 22 end================================================================= -->
   <!-- =====================================================page 23 Start================================================================= -->
 
-  <div class="page relative">
+  <div class="page relative" id="gear-coupling">
     <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/left.webp" alt=""></div>
           <div class="midsec">
@@ -1381,7 +1586,7 @@
         </div>
   <!-- =====================================================page 27 end================================================================= -->
   <!-- =====================================================page 28 Start================================================================= -->
- <div class="page relative">
+ <div class="page relative" id="pin-bush-coupling">
   <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/right1.webp" alt=""></div>
           <div class="midsec">
@@ -1437,7 +1642,7 @@
         </div>
   <!-- =====================================================page 31 end================================================================= -->
   <!-- =====================================================page 32 Start================================================================= -->
-       <div class="page relative">
+       <div class="page relative" id="roller-chain-coupling">
         <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/right1.webp" alt=""></div>
           <div class="midsec">
@@ -1513,7 +1718,7 @@
         </div>
   <!-- =====================================================page 37 end================================================================= -->
   <!-- =====================================================page 38 Start================================================================= -->
-<div class="page relative">
+<div class="page relative" id="curved-jaw-coupling">
   <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/right1.webp" alt=""></div>
           <div class="midsec">
@@ -1579,7 +1784,7 @@
         </div>
   <!-- =====================================================page 42 end================================================================= -->
   <!-- =====================================================page 43 Start================================================================= -->
-        <div class="page relative">
+        <div class="page relative" id="straight-jaw-coupling">
           <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/left.webp" alt=""></div>
           <div class="midsec">
@@ -1631,7 +1836,7 @@
         </div>
   <!-- =====================================================page 46 end================================================================= -->
   <!-- =====================================================page 47 Start================================================================= -->
-  <div class="page relative">
+  <div class="page relative" id="diverter-wheel">
     <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
           <div class="topsec"><img src="../global assets/Images/Top&Bottom/left.webp" alt=""></div>
           <div class="midsec">
@@ -1654,6 +1859,87 @@
         </div>
   <!-- =====================================================page 47 end================================================================= -->
 
+  <!-- =====================================================page 48 Start================================================================= -->
+         <div class="page relative" style="background-color: transparent !important;" >
+              <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
+
+    <div class="topsec">
+        <img src="../global assets/Images/Top&Bottom/right1.webp" alt="">
+    </div>
+
+    <div class="absolute top-[8%] left-[50%] w-[100%] h-[100%]" style="transform: translateX(-50%);">
+   <div class="midsec  w-[98%] overflow-y-scroll custom-scroll relative" style="scrollbar-width: 1px; overflow-y: scroll !important; background-color: transparent !important; height: 88%;">
+        <div class="flex flex-col items-center gap-6 bg-[none]" style="background-color: transparent !important;">
+            <img src="../global assets/pages/diverter-wheel/technical-drawing-specifications.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/diverter-wheel/diverter-wheel-data-table-2.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/diverter-wheel/diverter-wheel-data-table-3.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/diverter-wheel/diverter-wheel-data-table-4.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/diverter-wheel/diverter-wheel-data-table-5.webp"
+                 class="w-[90%]" />
+
+            <img src="../global assets/pages/diverter-wheel/thank-you.webp"
+                 class="w-[90%]" />
+        </div>
+    </div>
+    </div>
+ 
+    <img src="../global assets/Images_new/page_no/48.svg" class="absolute  bottom-[.5%] left-[50%] w-[5%] z-[2] " style="transform: translateX(-50%);"/>
+    <div class="bottomsec">
+        <img src="../global assets/Images/Top&Bottom/right2.webp" alt="">
+    </div>
+</div>
+  <!-- =====================================================page 48 end================================================================= -->
+  <!-- =====================================================page 49 Contact US Start================================================================= -->
+
+
+ <div class="page relative" id="contact-us">      
+      <img src="../global assets/Images/white_blank.webp" alt="white_page" class="  w-[100%] h-[100%] top-[0] right-[0] white-page "/>
+
+            <img src="../global assets/pages/contact-us/contact-page.webp" class="w-[100%] h-[85%] absolute top-[0%] left-[0%]"/>
+
+            <div class="page_image52">
+               <img src="../global assets/pages/contact-us/location.webp" id="locationBtn" class="w-[52%]  absolute bottom-[8%] left-[5%] cursor-pointer popup_images52"/>
+          
+            <a href="mailto:info@bestomech.com">
+            <img src="../global assets/pages/contact-us/mail.webp" class="w-[52%]  absolute bottom-[3%] left-[5.5%] cursor-pointer z-[11] popup_images52"/>
+          </a>
+            
+            <a href="https://www.bestomech.com" target="_blank">
+              <img src="../global assets/pages/contact-us/website.webp" class="w-[25%]  absolute top-[6%] left-[5%] cursor-pointer popup_images52"/>
+            </a>
+            
+            <a href="tel:+919944964743">
+              <img src="../global assets/pages/contact-us/phone-icon.svg" class="w-[5%]  absolute bottom-[6%] right-[21%] cursor-pointer popup_images52"/>
+            </a>
+
+            <a href="tel:+919944964743">
+              <img src="../global assets/pages/contact-us/phone-number-1.svg" class="w-[14%]  absolute bottom-[9.5%] right-[5%] cursor-pointer popup_images52"/>
+            </a>
+
+            <a href="tel:+919842264741">
+              <img src="../global assets/pages/contact-us/phone-number-2.svg" class="w-[14%]  absolute bottom-[7.5%] right-[5%] cursor-pointer popup_images52"/>
+            </a>
+
+            <a href="tel:+919843264741">
+              <img src="../global assets/pages/contact-us/phone-number-3.svg" class="w-[14%]  absolute bottom-[5.5%] right-[5%] cursor-pointer popup_images52"/>
+            </a> 
+
+
+            </div>
+           
+             <div class="gradient"></div>
+        </div>
+
+
+  <!-- =====================================================page 49 Contact US End================================================================= -->
 
 
 
@@ -3605,37 +3891,132 @@ document.getElementById('diverterShaftDiaInput').addEventListener('paste', funct
 });
 </script>
     <!-- ---------***************diverter Wheel popup fetch end******************------  -->
-<!-- <script>
-  const menuBtn = document.getElementById('menuBtn');
-  const menuPanel = document.getElementById('menuPanel');
-  const menuContent = document.getElementById('menuContent');
 
-  menuBtn.addEventListener('click', () => {
-    const isOpen = menuContent.classList.contains('scale-100');
-    
-    if (isOpen) {
-      menuContent.classList.remove('scale-100');
-      menuPanel.classList.remove('opacity-100');
-      menuPanel.classList.add('opacity-0', 'pointer-events-none');
-    } else {
-      menuContent.classList.add('scale-100');
-      menuPanel.classList.remove('opacity-0', 'pointer-events-none');
-      menuPanel.classList.add('opacity-100');
+<!-- *************************Poly-v-pulley******Next Previous Button start*********************** -->
+
+<script>
+  // 3 pages — each page has 2 images
+  const polyVPulleyPages = [
+    { images: [
+        "../global assets/pages/poly-v-pulley/table-1-j.webp",
+        "../global assets/pages/poly-v-pulley/table-2-j.webp"
+      ]
+    },
+    { images: [
+        "../global assets/pages/poly-v-pulley/table-1-k.webp",
+        "../global assets/pages/poly-v-pulley/table-2-k.webp"
+      ]
+    },
+    { images: [
+        "../global assets/pages/poly-v-pulley/table-1-l.webp",
+        "../global assets/pages/poly-v-pulley/table-2-l.webp"
+      ]
     }
-  });
+  ];
 
-  menuPanel.addEventListener('click', () => {
-    menuContent.classList.remove('scale-100');
-    menuPanel.classList.add('opacity-0', 'pointer-events-none');
-  });
+  let polyVPulleyCurrentIndex = 0;
 
-  menuContent.addEventListener('click', (e) => {
-    if (e.target.closest('button:first-child')) {
-      menuContent.classList.remove('scale-100');
-      menuPanel.classList.add('opacity-0', 'pointer-events-none');
+  function polyVPulleyDisplayImage(index) {
+    const contentDiv = document.getElementById("poly-v-pulley-pageContent");
+    const currentImageSpan = document.getElementById("poly-v-pulley-currentImage");
+
+    // guard
+    if (!polyVPulleyPages[index]) return;
+
+    const page = polyVPulleyPages[index];
+
+    // Load ONLY 2 images for the selected page
+    contentDiv.innerHTML = `
+      <img class="w-[90%]" src="${page.images[0]}" alt="page-${index+1}-img1" />
+      <img class="w-[90%]" src="${page.images[1]}" alt="page-${index+1}-img2" />
+    `;
+
+    // Update counter (1/3, 2/3, 3/3)
+    currentImageSpan.textContent = index + 1;
+
+    updateButtonStates();
+
+    // Optional: scroll top of midsec when page changes
+    const mid = document.querySelector('.midsec');
+    if (mid) mid.scrollTop = 0;
+  }
+
+  function polyVPulleyNextImage() {
+    if (polyVPulleyCurrentIndex < polyVPulleyPages.length - 1) {
+      polyVPulleyCurrentIndex++;
+      polyVPulleyDisplayImage(polyVPulleyCurrentIndex);
     }
-  });
-</script> -->
+  }
+
+  function polyVPulleyPreviousImage() {
+    if (polyVPulleyCurrentIndex > 0) {
+      polyVPulleyCurrentIndex--;
+      polyVPulleyDisplayImage(polyVPulleyCurrentIndex);
+    }
+  }
+
+  function updateButtonStates() {
+    const prev = document.getElementById("poly-v-pulley-prevBtn");
+    const next = document.getElementById("poly-v-pulley-nextBtn");
+    const total = document.getElementById("poly-v-pulley-totalImages");
+
+    if (prev) prev.disabled = polyVPulleyCurrentIndex === 0;
+    if (next) next.disabled = polyVPulleyCurrentIndex === polyVPulleyPages.length - 1;
+    if (total) total.textContent = polyVPulleyPages.length;
+  }
+
+  // Initialize after DOM ready
+    polyVPulleyDisplayImage(0);
+</script>
+<!-- *************************Poly-v-pulley******Next Previous Button end*********************** -->
+
+<!-- **********************************NAV BAR Start*********************************************** -->
+
+
+<script>
+const quickBtn = document.getElementById('quickToggleBtn');
+const quickOverlay = document.getElementById('quickOverlay');
+const quickMenu = document.getElementById('quickMenu');
+
+const quickDots = quickBtn.querySelector('.quick-dots');
+const quickX = quickBtn.querySelector('.quick-x');
+
+/* ---------- FUNCTIONS ---------- */
+function openQuickMenu() {
+  quickMenu.classList.add('scale-100');
+  quickOverlay.classList.remove('opacity-0', 'pointer-events-none');
+  quickOverlay.classList.add('opacity-100');
+
+  quickDots.classList.add('hidden');
+  quickX.classList.remove('hidden');
+}
+
+function closeQuickMenu() {
+  quickMenu.classList.remove('scale-100');
+  quickOverlay.classList.add('opacity-0', 'pointer-events-none');
+  quickOverlay.classList.remove('opacity-100');
+
+  quickDots.classList.remove('hidden');
+  quickX.classList.add('hidden');
+}
+
+/* ---------- TOGGLE ---------- */
+quickBtn.addEventListener('click', () => {
+  const isOpen = quickMenu.classList.contains('scale-100');
+  isOpen ? closeQuickMenu() : openQuickMenu();
+});
+
+/* ---------- OVERLAY CLICK ---------- */
+quickOverlay.addEventListener('click', closeQuickMenu);
+
+/* ---------- ICON CLICK ---------- */
+quickMenu.querySelectorAll('.quick-action').forEach(btn => {
+  btn.addEventListener('click', closeQuickMenu);
+});
+</script>
+
+
+<!-- **********************************NAV BAR End*********************************************** -->
 
   <script src="./script.js"></script>
 </body>

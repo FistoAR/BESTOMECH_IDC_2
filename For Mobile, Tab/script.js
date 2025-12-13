@@ -254,50 +254,50 @@ document.addEventListener('keydown', function (e) {
 });
 
 
-// SHARE BUTTON LOGIC
-const shareBtn = document.getElementById('shareBtn');
-const shareMenu = document.getElementById('shareMenu');
-const copyLinkBtn = document.getElementById('copyLinkBtn');
-const copiedMsg = document.getElementById('copiedMsg');
-const shareInput = document.getElementById('shareInput');
+// // SHARE BUTTON LOGIC
+// const shareBtn = document.getElementById('shareBtn');
+// const shareMenu = document.getElementById('shareMenu');
+// const copyLinkBtn = document.getElementById('copyLinkBtn');
+// const copiedMsg = document.getElementById('copiedMsg');
+// const shareInput = document.getElementById('shareInput');
 
-shareInput.value = window.location.href;
+// shareInput.value = window.location.href;
 
-shareBtn.addEventListener('click', function (e) {
-    e.stopPropagation();
-    const wasOpen = shareMenu.classList.contains('show');
-    document.querySelectorAll('.share-menu.show').forEach(el => el.classList.remove('show'));
-    if (!wasOpen) {
-        shareMenu.classList.add('show');
-        shareMenu.setAttribute('aria-hidden', 'false');
-        try {
-        shareInput.value = window.top.location.href;
-        } catch (e) {
-        // fallback to current window location if cross-origin blocked
-        shareInput.value = window.location.href;
-        }
-        setTimeout(() => shareInput.select(), 90);
-    } else {
-        shareMenu.classList.remove('show');
-        shareMenu.setAttribute('aria-hidden', 'true');
-    }
-});
-copyLinkBtn.addEventListener('click', function () {
-    navigator.clipboard.writeText(shareInput.value).then(function () {
-        copiedMsg.classList.add('show');
-        setTimeout(() => copiedMsg.classList.remove('show'), 1200);
-    });
-    shareInput.select();
-});
+// shareBtn.addEventListener('click', function (e) {
+//     e.stopPropagation();
+//     const wasOpen = shareMenu.classList.contains('show');
+//     document.querySelectorAll('.share-menu.show').forEach(el => el.classList.remove('show'));
+//     if (!wasOpen) {
+//         shareMenu.classList.add('show');
+//         shareMenu.setAttribute('aria-hidden', 'false');
+//         try {
+//         shareInput.value = window.top.location.href;
+//         } catch (e) {
+//         // fallback to current window location if cross-origin blocked
+//         shareInput.value = window.location.href;
+//         }
+//         setTimeout(() => shareInput.select(), 90);
+//     } else {
+//         shareMenu.classList.remove('show');
+//         shareMenu.setAttribute('aria-hidden', 'true');
+//     }
+// });
+// copyLinkBtn.addEventListener('click', function () {
+//     navigator.clipboard.writeText(shareInput.value).then(function () {
+//         copiedMsg.classList.add('show');
+//         setTimeout(() => copiedMsg.classList.remove('show'), 1200);
+//     });
+//     shareInput.select();
+// });
 
-// hide share menu on body/overlay click or Esc
-document.addEventListener('click', e => {
-    if (!shareMenu.contains(e.target) && !shareBtn.contains(e.target))
-        shareMenu.classList.remove('show');
-});
-document.addEventListener('keydown', e => {
-    if (e.key === "Escape") shareMenu.classList.remove('show');
-});
+// // hide share menu on body/overlay click or Esc
+// document.addEventListener('click', e => {
+//     if (!shareMenu.contains(e.target) && !shareBtn.contains(e.target))
+//         shareMenu.classList.remove('show');
+// });
+// document.addEventListener('keydown', e => {
+//     if (e.key === "Escape") shareMenu.classList.remove('show');
+// });
 
 // ------------------------nav- end ---------------------
 
@@ -345,4 +345,218 @@ revealImages.forEach((img, index) => {
   });
 });
 
+
+const shareBtn = document.getElementById('shareBtn');
+        const shareModal = document.getElementById('shareModal');
+        const shareOverlay = document.getElementById('shareOverlay');
+        const closeBtn = document.getElementById('closeBtn');
+        const shareInput = document.getElementById('shareInput');
+        const copyBtn = document.getElementById('copyBtn');
+        const copiedMsg = document.getElementById('copiedMsg');
+
+        // Set link
+        shareInput.value = window.top.location.href;
+
+        // Open modal
+        shareBtn.addEventListener('click', () => {
+            shareModal.classList.remove('hidden');
+            shareOverlay.classList.remove('hidden');
+            shareInput.select();
+        });
+
+        // Close modal
+        const closeModal = () => {
+            shareModal.classList.add('hidden');
+            shareOverlay.classList.add('hidden');
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        shareOverlay.addEventListener('click', closeModal);
+
+        // Copy link
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(shareInput.value).then(() => {
+                copiedMsg.classList.remove('hidden');
+                setTimeout(() => copiedMsg.classList.add('hidden'), 1500);
+            });
+        });
+
+        // Social share functions
+        document.getElementById('whatsappBtn').addEventListener('click', () => {
+            const url = encodeURIComponent(shareInput.value);
+            window.open(`https://wa.me/?text=${url}`, '_blank');
+        });
+
+        document.getElementById('twitterBtn').addEventListener('click', () => {
+            const url = encodeURIComponent(shareInput.value);
+            window.open(`https://twitter.com/intent/tweet?url=${url}`, '_blank');
+        });
+
+        document.getElementById('facebookBtn').addEventListener('click', () => {
+            const url = encodeURIComponent(shareInput.value);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        });
+
+        // LinkedIn Share
+document.getElementById('linkedInBtn').addEventListener('click', () => {
+    const url = encodeURIComponent(shareInput.value);
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+});
+
+        // document.getElementById('gmailBtn').addEventListener('click', () => {
+        //     const url = encodeURIComponent(shareInput.value);
+        //     window.open(`mailto:?subject=Check this out&body=${url}`, '_blank');
+        // });
+
+        // document.getElementById('linkedinBtn').addEventListener('click', () => {
+        //     const url = encodeURIComponent(shareInput.value);
+        //     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+        // });
+
+        // document.getElementById('instagramBtn').addEventListener('click', () => {
+        //     alert('Instagram sharing requires the app. Copy the link and share it manually.');
+        // });
+
+//         document.getElementById('instagramBtn').addEventListener('click', () => {
+//     const url = encodeURIComponent(shareInput.value);
+//     window.location.href = `intent://share?text=${url}#Intent;scheme=instagram;package=com.instagram.android;end`;
+// });
+
+// document.getElementById('instagramBtn').addEventListener('click', () => {
+//     const liveURL = encodeURIComponent(shareInput.value); // your LIVE URL here
+//     window.open(`https://www.instagram.com/?url=${liveURL}`, "_blank");
+// });
+
+// document.getElementById('instagramBtn').addEventListener('click', () => {
+
+//     const link = shareInput.value;
+
+//     // Copy the link automatically
+//     navigator.clipboard.writeText(link).then(() => {
+
+//         // Try opening Instagram app
+//         window.location.href = "instagram://app";
+
+//         // Notify user
+//         alert("Link copied! Open Instagram and paste it into your post or story.");
+//     });
+// });
+
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+
+
+
+
+        // ****************************share button navbar functionality end************************** 
+
+
+        
+// ***********************************download code start******************************************
+
+const downloadBtn = document.getElementById("download-btn");
+const downloadPopup = document.getElementById("downloadPopup");
+
+downloadBtn.addEventListener("click", () => {
+
+  /* 1️⃣ Show popup */
+  downloadPopup.classList.remove("hidden");
+  requestAnimationFrame(() => {
+    downloadPopup.classList.add("opacity-100");
+  });
+
+  /* 2️⃣ Trigger download immediately (MOBILE SAFE) */
+  const fileUrl = "../global assets/Bestomech-IDC-Final.pdf";
+
+  if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    // Mobile → open file directly
+    window.location.href = fileUrl;
+  } else {
+    // Desktop → force download
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "Bestomech-IDC.pdf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  /* 3️⃣ Auto-hide popup */
+  setTimeout(() => {
+    downloadPopup.classList.remove("opacity-100");
+    setTimeout(() => downloadPopup.classList.add("hidden"), 300);
+  }, 2000);
+});
+
+// ***********************************download code end******************************************
+// **********************************music start*****************************************
+
+window.addEventListener('load', function () {
+    const bgmAudio = document.getElementById('bgmAudio');
+    bgmAudio.volume = 0.15;
+    bgmAudio.muted = true; // ✅ Start muted to bypass autoplay restrictions
+
+    const bgmButton = document.getElementById('bgmButton');
+    const musicOnImg = document.getElementById('musicOnImg');
+    const musicOffImg = document.getElementById('musicOffImg');
+
+    let musicOn = true;
+    let hasUnmuted = false; // Track if we've unmuted yet
+
+    function updateIcons() {
+        if (musicOn) {
+            musicOnImg.classList.remove("hidden");
+            musicOffImg.classList.add("hidden");
+        } else {
+            musicOnImg.classList.add("hidden");
+            musicOffImg.classList.remove("hidden");
+        }
+    }
+
+    function toggleMusic() {
+        // ✅ Unmute on first interaction
+        if (!hasUnmuted) {
+            bgmAudio.muted = false;
+            hasUnmuted = true;
+        }
+
+        if (musicOn) {
+            bgmAudio.pause();
+            musicOn = false;
+        } else {
+            bgmAudio.play().catch(function (error) {
+                console.log('Could not play music:', error);
+            });
+            musicOn = true;
+        }
+
+        updateIcons();
+    }
+
+    bgmButton.onclick = toggleMusic;
+
+    // ✅ Auto-unmute on ANY click on the page
+    document.addEventListener('click', function unmute() {
+        if (!hasUnmuted) {
+            bgmAudio.muted = false;
+            hasUnmuted = true;
+            console.log('Audio unmuted');
+        }
+    }, { once: true }); // Only fires once
+
+    // ✅ Start playing muted immediately
+    bgmAudio.play().then(() => {
+        console.log('Audio playing (muted initially)');
+        updateIcons();
+    }).catch(function (error) {
+        console.log('Autoplay failed:', error);
+        musicOn = false;
+        updateIcons();
+    });
+});
+// **************************************
 
