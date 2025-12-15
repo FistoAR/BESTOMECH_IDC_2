@@ -28,7 +28,11 @@ html, body {
     height: 80vh; /* for screens above 500px */
   }
 }
-
+@media (max-width: 450px) {
+  .white-page {
+    height: 90vh; /* for screens above 500px */
+  }
+}
 
 
 .back-top-wrapper {
@@ -416,7 +420,7 @@ html, body {
     visibility: hidden;
 
     /* ✅ Control the nav height */
-    max-height: 50vh; /* adjust as needed */
+    /* max-height: 50vh; adjust as needed */
     display: flex;
     flex-direction: column;
 }
@@ -439,7 +443,7 @@ html, body {
 
 @media (max-width: 500px) {
   .white-page {
-    height: 60vh; /* for very small screens */
+    height: 66vh; /* for very small screens */
   }
 }
 
@@ -1370,7 +1374,7 @@ body {
              align-items: center;
              background: #2e2e2e;
              color: white;
-             padding: 6px 20px;
+             padding: 6px 12px;
              border-radius: 999px;
              width: fit-content;
              gap: 10px;

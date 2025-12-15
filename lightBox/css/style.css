@@ -7379,7 +7379,7 @@ body{
   
   a.lightbox-close {
   display: block;
-  width:50px;
+  width:53px;
   height:50px;
   box-sizing: border-box;
   background: white;
@@ -7400,8 +7400,8 @@ body{
   content: "";
   display: block;
   height: 30px;
-  width: 1px;
-  background: black;
+  width: 3px;
+  background: rgb(255, 255, 255);
   position: absolute;
   left: 26px;
   top:10px;
@@ -7416,8 +7416,8 @@ body{
   content: "";
   display: block;
   height: 30px;
-  width: 1px;
-  background: black;
+  width: 3px;
+  background: rgb(255, 255, 255);
   position: absolute;
   left: 26px;
   top:10px;
@@ -7788,8 +7788,8 @@ margin-bottom: 3.5rem!important;
 } */
 
  a.lightbox-close {
-  background: red;
-    border-radius: 50px;
+  background: #023b7c;
+    border-radius: 10px;
     top: 1.5% !important;
     right: 1%;
  }

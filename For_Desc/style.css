@@ -279,7 +279,7 @@
     transition: opacity .32s cubic-bezier(.7, -0.26, .8, 1.42),
         transform .33s cubic-bezier(.7, -0.26, .8, 1.42);
     visibility: hidden;
-    max-height: 70vh;
+    /* max-height: 70vh; */
     display: flex;
     flex-direction: column;
 }
@@ -298,6 +298,7 @@
     /* disable horizontal scroll */
     padding: 0;
     margin: 0;
+    
 }
 
 
