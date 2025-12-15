@@ -759,6 +759,7 @@
              padding: 0px;
              font-size: 10px;
              cursor: pointer;
+             font-weight: 800;
             }
             /* 🔥 Infinite Animation */
             @keyframes wiggle {
@@ -2255,4 +2256,10 @@
 
 .no-scrollbar {
     overflow-y: hidden !important;
+}
+
+@keyframes zoomInOut {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
