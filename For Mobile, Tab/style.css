@@ -92,7 +92,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: box-shadow 0.26s, transform 0.2s, background 0.25s;
+    /* transition: box-shadow 0.26s, transform 0.2s, background 0.25s; */
     outline: 3px solid #fff; /* white border */
     scale: .8;
 }
@@ -255,6 +255,7 @@ html, body {
     .nav-toggle-btn {
         top: 16px;
         left: 10px;
+        position: fixed !important;
     }
 }
     

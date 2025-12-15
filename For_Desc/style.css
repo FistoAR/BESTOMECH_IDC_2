@@ -2084,7 +2084,7 @@
     height: 100%;
     overflow-y: auto; /* This handles scroll */
     overflow-x: hidden;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center; /* Align to top */
     /* padding: 5vh 5vw; Space for zoomed content */
