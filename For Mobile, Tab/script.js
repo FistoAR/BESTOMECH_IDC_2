@@ -17,20 +17,34 @@ document.querySelectorAll('.page img').forEach((img) => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const aboutLinks = document.querySelectorAll('.nav-links');
-  const audio = document.getElementById('infoAudio');
-
-  aboutLinks.forEach(function (link) {
-    link.addEventListener('click', function (e) {
+  const links = document.querySelectorAll(".nav-links, .tb-link");
+  const audio = document.getElementById("infoAudio");
+ 
+  links.forEach(function (link) {
+    link.addEventListener("click", function (e) {
       e.preventDefault();
-      const targetId = this.getAttribute('data-target');
-      const audioPath = this.getAttribute('data-audio-path');
+ 
+      const targetId = this.getAttribute("data-target");
+      const audioPath = this.getAttribute("data-audio-path");
       const targetEl = document.getElementById(targetId);
-
-      if (targetEl) {
-        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ 
+      if (!targetEl) return;
+ 
+      if (targetId === "contact-us") {
+        // GSAP ScrollToPlugin ONLY for Contact Us - zero lag
+        gsap.to(window, {
+          scrollTo: targetEl,
+          duration: 0.8,
+          ease: "power2.out",
+        });
+      } else {
+        targetEl.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }
-      // Play audio
+ 
+      // play audio
       if (audioPath && audio) {
         audio.src = audioPath;
         audio.currentTime = 0;
