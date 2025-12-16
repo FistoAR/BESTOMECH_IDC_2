@@ -484,7 +484,7 @@ downloadBtn.addEventListener("click", () => {
   });
 
   /* 2️⃣ Trigger download immediately (MOBILE SAFE) */
-  const fileUrl = "../global assets/Bestomech-IDC-Final.pdf";
+  const fileUrl = "../Bestomech-IDC-Final";
 
   if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
     // Mobile → open file directly
